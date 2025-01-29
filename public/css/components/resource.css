@@ -1,0 +1,70 @@
+/* ===== 资源面板样式 ===== */
+/* 资源列表容器 */
+.resources-container {
+    display: flex;       /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列 */
+    gap: 2px;           /* 资源项之间的最小间距 */
+}
+
+/* 单个资源项样式 */
+.resource-item {
+    color: #fff;        /* 白色文字 */
+    font-size: 1em;     /* 标准字体大小 */
+}
+
+/* 资源项悬停效果 */
+.resource-item:hover {
+    transform: translateY(-2px);        /* 轻微上浮 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* 添加阴影 */
+}
+
+/* 资源头部样式 */
+.resource-header {
+    display: flex;                      /* 弹性布局 */
+    align-items: center;                /* 垂直居中 */
+    gap: 8px;                          /* 图标和名称间距 */
+}
+
+/* 资源图标样式 */
+.resource-icon {
+    font-size: 1.2em;                  /* 图标大小 */
+}
+
+/* 资源名称样式 */
+.resource-name {
+    font-weight: 600;                  /* 字体加粗 */
+    font-size: 1.1em;                  /* 字体大小 */
+}
+
+/* 资源详情样式 */
+.resource-details {
+    display: flex;                     /* 弹性布局 */
+    justify-content: space-between;     /* 两端对齐 */
+    align-items: center;               /* 垂直居中 */
+    font-size: 0.9em;                 /* 字体大小 */
+}
+
+/* 资源数量样式 */
+.resource-amount {
+    color: #fff;                      /* 白色文字 */
+}
+
+/* 资源产量样式 */
+.resource-production {
+    font-weight: 500;                 /* 字体加粗 */
+}
+
+/* 进度条容器样式 */
+.resource-progress {
+    width: 100%;                      /* 宽度占满 */
+    height: 4px;                      /* 高度 */
+    background: rgba(255,255,255,0.1);/* 背景色 */
+    border-radius: 2px;               /* 圆角 */
+    overflow: hidden;                 /* 隐藏溢出 */
+}
+
+/* 进度条样式 */
+.progress-bar {
+    height: 100%;                     /* 高度占满 */
+    transition: width 0.3s ease;      /* 宽度变化过渡效果 */
+} 

@@ -1,0 +1,100 @@
+/* ===== 按钮基础样式 ===== */
+.game-btn {
+    display: inline-block;  /* 行内块级元素 */
+    padding: 8px 16px;     /* 内部填充：上下8px，左右16px */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* 半透明边框 */
+    border-radius: 4px;    /* 圆角边框 */
+    cursor: pointer;       /* 鼠标指针变为手型 */
+    font-weight: 600;      /* 字体加粗 */
+    transition: all 0.3s ease;  /* 所有属性变化添加0.3秒过渡效果 */
+    text-align: center;    /* 文字居中 */
+    outline: none;         /* 移除焦点轮廓 */
+    background: transparent;  /* 透明背景 */
+    color: #fff;           /* 白色文字 */
+    backdrop-filter: blur(5px);  /* 背景模糊效果 */
+}
+
+/* 禁用状态的按钮样式 */
+.game-btn:disabled {
+    opacity: 0.6;         /* 降低透明度 */
+    cursor: not-allowed;  /* 禁用鼠标指针 */
+    border-color: rgba(255, 255, 255, 0.1);  /* 更淡的边框颜色 */
+}
+
+/* ===== 按钮类型样式 ===== */
+/* 默认按钮 */
+.game-btn-default {
+    background: transparent;  /* 透明背景 */
+    color: #fff;            /* 白色文字 */
+    border-color: rgba(255, 255, 255, 0.2);  /* 半透明边框 */
+}
+
+.game-btn-default:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);  /* 悬停时显示半透明白色背景 */
+}
+
+/* 主要按钮 */
+.game-btn-primary {
+    background: rgba(52, 152, 219, 0.2);  /* 半透明蓝色背景 */
+    border-color: #3498db;               /* 蓝色边框 */
+}
+
+.game-btn-primary:hover:not(:disabled) {
+    background: rgba(52, 152, 219, 0.3);  /* 悬停时加深背景 */
+}
+
+/* 成功按钮 */
+.game-btn-success {
+    background: rgba(46, 204, 113, 0.2);  /* 半透明绿色背景 */
+    border-color: #2ecc71;               /* 绿色边框 */
+}
+
+.game-btn-success:hover:not(:disabled) {
+    background: rgba(46, 204, 113, 0.3);  /* 悬停时加深背景 */
+}
+
+/* 警告按钮 */
+.game-btn-warning {
+    background: rgba(241, 196, 15, 0.2);  /* 半透明黄色背景 */
+    border-color: #f1c40f;               /* 黄色边框 */
+    color: #f1c40f;                      /* 黄色文字 */
+}
+
+.game-btn-warning:hover:not(:disabled) {
+    background: rgba(241, 196, 15, 0.3);  /* 悬停时加深背景 */
+}
+
+/* 危险按钮 */
+.game-btn-danger {
+    background: rgba(231, 76, 60, 0.2);   /* 半透明红色背景 */
+    border-color: #e74c3c;                /* 红色边框 */
+}
+
+.game-btn-danger:hover:not(:disabled) {
+    background: rgba(231, 76, 60, 0.3);   /* 悬停时加深背景 */
+}
+
+/* ===== 按钮尺寸 ===== */
+/* 小型按钮 */
+.game-btn-small {
+    padding: 4px 8px;     /* 较小的内边距 */
+    font-size: 0.8em;     /* 较小的字体 */
+}
+
+/* 中型按钮（默认） */
+.game-btn-medium {
+    padding: 8px 16px;    /* 标准内边距 */
+    font-size: 1em;       /* 标准字体大小 */
+}
+
+/* 大型按钮 */
+.game-btn-large {
+    padding: 12px 24px;   /* 较大的内边距 */
+    font-size: 1.2em;     /* 较大的字体 */
+}
+
+/* ===== 按钮动画效果 ===== */
+/* 点击时的缩放效果 */
+.game-btn:active:not(:disabled) {
+    transform: scale(0.98);  /* 轻微缩小 */
+} 

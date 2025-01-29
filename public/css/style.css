@@ -1,0 +1,239 @@
+/* ===== 全局样式 ===== */
+@import url('./components/resource.css');  /* 导入资源组件样式 */
+@import url('./components/button.css');    /* 导入按钮组件样式 */
+@import url('./components/log.css');       /* 导入日志组件样式 */
+
+/* 重置所有元素的默认样式 */
+* {
+    margin: 0;          /* 移除外边距 */
+    padding: 0;         /* 移除内边距 */
+    box-sizing: border-box;  /* 使元素的宽度包含padding和border */
+}
+
+/* 设置网页的基本样式 */
+body {
+    font-family: Arial, sans-serif;  /* 设置字体，如果Arial不可用则使用系统默认无衬线字体 */
+    line-height: 1.6;    /* 设置行高为字体大小的1.6倍，提高可读性 */
+    background-color: #1a1a1a;  /* 深色背景 */
+    color: #e0e0e0;     /* 浅色文字，与深色背景形成对比 */
+}
+
+/* ===== 游戏主容器样式 ===== */
+#game-container {
+    max-width: 100%;    /* 修改为100%以占满整个屏幕 */
+    margin: 0;           /* 移除外边距 */   
+    padding: 0px;        /* 移除内边距 */
+    min-height: 100vh;  /* 最小高度为视口高度 */
+    display: flex;      /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+/* ===== 主要内容区域 ===== */
+main {
+    flex: 1;           /* 占用剩余空间 */
+    display: flex;     /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+/* ===== 头部样式 ===== */
+header {
+    text-align: left;
+    position: relative;  /* 用于定位版本号 */
+}
+
+/* 主标题样式 */
+header h1 {
+    font-size: 1em;    /* 字体大小为基准大小的2.5倍 */
+    color: #e60bee;    /* 白色文字 */
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);  /* 添加发光效果 */
+    display: inline-block;  /* 使标题和版本号在同一行 */
+}
+
+/* 版本号样式 */
+.version-number {
+    position: absolute;  /* 绝对定位 */
+    right: 10px;        /* 距离右侧10px */
+    font-size: 0.8em;   /* 字体稍小 */
+    color: #888;        /* 灰色文字 */
+    cursor: help;       /* 鼠标变为问号 */
+    padding: 2px 6px;   /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    background: rgba(0, 0, 0, 0.2); /* 半透明背景 */
+    transition: all 0.3s ease; /* 过渡效果 */
+}
+
+/* 版本号悬停效果 */
+.version-number:hover {
+    color: #fff;        /* 悬停时文字变白 */
+    background: rgba(230, 11, 238, 0.2); /* 悬停时背景变为主题色 */
+}
+
+/* 标题分割线样式 */
+.title-divider {
+    border: none;       /* 移除边框 */
+    height: 1px;        /* 高度为1像素 */
+    background: linear-gradient(to right,       /* 线性渐变 */  
+        rgba(230, 11, 238, 0.5),  /* 渐变颜色 */
+        rgba(230, 11, 238, 0.8),  /* 渐变颜色 */
+        rgba(230, 11, 238, 0.5)  /* 渐变颜色 */
+    );
+    margin: 10px 0;      /* 外边距 */
+    box-shadow: 0 0 5px rgba(230, 11, 238, 0.3); /* 阴影效果 */
+}
+
+/* ===== 面板容器样式 ===== */
+.panels-container {
+    display: flex;        /* 使用flexbox布局 */
+    flex: 1;             /* 占用所有可用空间 */
+    gap: 10px;           /* 面板之间的间距 */
+    min-height: 0;       /* 防止溢出 */
+    height: calc(100vh - 200px); /* 设置固定高度，减去头部和底部的空间 */
+}
+
+/* ===== 面板基础样式 ===== */
+.panel {
+    flex: 1;             /* 面板平均分配空间 */
+    min-width: 0;        /* 允许面板缩小 */
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px;        /* 内边距20像素 */
+    border-radius: 8px;      /* 圆角边框 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;    /* 内容过多时显示滚动条 */
+    display: flex;       /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列内容 */
+}
+
+/* 资源面板特殊样式 */
+#resources-panel {
+    flex: 1.6;  /* 占据1.6份空间 */
+}
+
+/* 建筑面板特殊样式 */
+#buildings-panel {
+    flex: 7;  /* 占据7份空间 */
+}
+
+/* 日志面板特殊样式 */
+#logs-panel {
+    flex: 1.4;  /* 占据1.4份空间 */
+}
+
+/* 面板内容容器样式 */
+.resources-container,
+.buildings-container,
+.logs-container {
+    flex: 1;          /* 占用面板中的所有可用空间 */
+    overflow-y: auto; /* 内容过多时显示滚动条 */
+    margin-bottom: 15px;
+}
+
+/* 面板标题样式 */
+.panel-title {
+    font-size: 1.5em;    /* 字体大小为基准大小的1.5倍 */
+    color: #fff;         /* 白色文字 */
+    margin-bottom: 15px; /* 下方外边距15像素 */
+    padding-bottom: 10px;/* 底部内边距10像素 */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);  /* 底部边框 */
+}
+
+/* ===== 建筑面板样式 ===== */
+/* 按钮容器样式 */
+.buttons-container {
+    display: flex;      /* 使用弹性布局 */
+    gap: 10px;         /* 按钮之间的间距 */
+    padding: 10px;     /* 内边距 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* 底部边框 */
+    margin-bottom: 10px;  /* 与建筑列表的间距 */
+}
+
+/* 建筑列表容器 */
+.buildings-container {
+    display: grid;      /* 使用网格布局 */
+    gap: 15px;         /* 网格间距15像素 */
+}
+
+/* 单个建筑项样式 */
+.building-item {
+    background: rgba(40, 40, 40, 0.9);  /* 半透明背景 */
+    padding: 15px;                      /* 内部填充15像素 */
+    border-radius: 6px;                 /* 圆角边框 */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* 半透明边框 */
+}
+
+/* 建筑信息容器 */
+.building-info {
+    margin-bottom: 10px;  /* 底部外边距10像素 */
+}
+
+/* 建筑名称样式 */
+.building-info h3 {
+    color: #fff;         /* 白色文字 */
+    margin-bottom: 5px;  /* 底部外边距5像素 */
+}
+
+/* 建筑描述样式 */
+.building-desc {
+    color: #aaa;        /* 灰色文字 */
+    font-size: 0.9em;   /* 字体大小为基准大小的0.9倍 */
+    margin-bottom: 5px; /* 底部外边距5像素 */
+}
+
+/* 建筑统计信息样式 */
+.building-stats {
+    display: flex;       /* 弹性布局 */
+    justify-content: space-between;  /* 两端对齐 */
+    color: #888;        /* 灰色文字 */
+    font-size: 0.9em;   /* 字体大小为基准大小的0.9倍 */
+}
+
+/* ===== 升级面板样式 ===== */
+/* 升级列表容器 */
+.upgrades-container {
+    display: grid;      /* 使用网格布局 */
+    gap: 15px;         /* 网格间距15像素 */
+}
+
+/* 单个升级项样式 */
+.upgrade-item {
+    background: rgba(40, 40, 40, 0.9);  /* 半透明背景 */
+    padding: 15px;                      /* 内部填充15像素 */
+    border-radius: 6px;                 /* 圆角边框 */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* 半透明边框 */
+}
+
+/* 升级信息容器 */
+.upgrade-info {
+    margin-bottom: 10px;  /* 底部外边距10像素 */
+}
+
+/* 升级名称样式 */
+.upgrade-info h3 {
+    color: #fff;         /* 白色文字 */
+    margin-bottom: 5px;  /* 底部外边距5像素 */
+}
+
+/* 升级描述样式 */
+.upgrade-desc {
+    color: #aaa;        /* 灰色文字 */
+    font-size: 0.9em;   /* 字体大小为基准大小的0.9倍 */
+    margin-bottom: 5px; /* 底部外边距5像素 */
+}
+
+/* 升级效果样式 */
+.upgrade-effect {
+    color: #e67e22;     /* 橙色文字 */
+    font-size: 0.9em;   /* 字体大小为基准大小的0.9倍 */
+    margin-bottom: 10px;/* 底部外边距10像素 */
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {  /* 当屏幕宽度小于768px时 */
+    #game-container {
+        padding: 10px;    /* 减小容器内边距 */
+    }
+
+    .building-item, .upgrade-item {
+        padding: 10px;    /* 减小建筑和升级项的内边距 */
+    }
+} 

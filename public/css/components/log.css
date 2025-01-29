@@ -1,0 +1,27 @@
+/* ===== 日志面板样式 ===== */
+/* 日志列表容器 */
+.logs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* 单个日志项样式 */
+.log-item {
+    color: #aaa;
+    font-size: 0.9em;
+    padding: 2px 0;
+}
+
+/* 不同类型日志的颜色 */
+.log-info { color: #aaa; }      /* 普通信息 */
+.log-success { color: #2ecc71; } /* 成功信息 */
+.log-warning { color: #f1c40f; } /* 警告信息 */
+.log-error { color: #e74c3c; }   /* 错误信息 */
+
+/* 日志时间戳样式 */
+.log-timestamp {
+    color: #666;
+    font-size: 0.8em;
+    margin-right: 5px;
+} 
